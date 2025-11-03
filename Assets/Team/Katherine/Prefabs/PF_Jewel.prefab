@@ -93,6 +93,12 @@ PrefabInstance:
     - {fileID: -8391222552659086748, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 839172548021196069}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6010156163275511640}
     - targetCorrespondingSourceObject: {fileID: 5991950692237409959, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3873725325385363892}
@@ -102,6 +108,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
   m_PrefabInstance: {fileID: 2541813048121566815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3424772364233087758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
+  m_PrefabInstance: {fileID: 2541813048121566815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &839172548021196069
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424772364233087758}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1620677642152641227, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
+--- !u!114 &6010156163275511640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424772364233087758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220177ef21e9f2643a613511300d7bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trueDiamondFalseKey: 1
 --- !u!1 &8098029480952092920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5991950692237409959, guid: 5b701745267cdb64f99f9ab9a6b47db8, type: 3}
