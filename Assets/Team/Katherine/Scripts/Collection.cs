@@ -10,10 +10,13 @@ public class Collection : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && trueDiamondFalseKey)
         {
             GameManager.instance.DiamondAddition(1);
+            Destroy(gameObject);
+            
         }
         else if (other.gameObject.CompareTag("Player") && !trueDiamondFalseKey)
         {
             GameManager.instance.KeyAddition(1);
+            Destroy(gameObject);    
         }
     }
 }
