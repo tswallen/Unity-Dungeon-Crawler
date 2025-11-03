@@ -16,9 +16,12 @@ public class FirstPersonCamera : MonoBehaviour
     private float currentHorizonalRotation;
     private float currentVerticalRotation;
 
+    public float offset;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         //euler angles are referring to the transform rotation (transform component of the camera), here we are looking to left and right, which is in this case is your Y, as we are not moving around we are moving along
         currentHorizonalRotation = transform.localEulerAngles.y;
         //this is up and down
@@ -42,7 +45,7 @@ public class FirstPersonCamera : MonoBehaviour
         transform.localEulerAngles = new Vector3(currentVerticalRotation, currentHorizonalRotation);
 
         //snap to the player's position, camera position is the player (the object we set in the inspecter)
-        transform.position = playerTransform.position;
+        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y + offset, playerTransform.position.z);
 
 
     }

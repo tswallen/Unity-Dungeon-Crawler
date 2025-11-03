@@ -615,7 +615,8 @@ MonoBehaviour:
   sensitivity: 5
   playerTransform: {fileID: 2145848931}
   verticalRotationMin: 0
-  verticalRotationMax: 0
+  verticalRotationMax: 180
+  offset: 0.8
 --- !u!1 &1195050311
 GameObject:
   m_ObjectHideFlags: 0
