@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 817758484525630984}
   m_Layer: 0
-  m_Name: P_Transition_Door
+  m_Name: Transition_Door_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
