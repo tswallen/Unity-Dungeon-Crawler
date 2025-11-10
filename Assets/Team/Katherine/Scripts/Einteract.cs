@@ -16,9 +16,12 @@ public class Einteract : MonoBehaviour
 
     bool canOpen = false;
 
+    public Animator doorAnimator;
+
     private void Start()
     {
         E.SetActive(false);
+        doorAnimator = GetComponentInParent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,6 +60,7 @@ public class Einteract : MonoBehaviour
             {
                 //trigger door animation
                 GameManager.instance.keyScore--;
+                doorAnimator.SetBool("DoorOpen", true);
                 Destroy(E);
             }
         }

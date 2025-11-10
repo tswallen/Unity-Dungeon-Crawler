@@ -6,6 +6,11 @@ public class TextLookAtPlayer : MonoBehaviour
 
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        target = FindAnyObjectByType<Camera>().transform;
+    }
     void Update()
     {
         transform.LookAt(target);
