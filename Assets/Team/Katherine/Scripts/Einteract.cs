@@ -21,7 +21,7 @@ public class Einteract : MonoBehaviour
     private void Start()
     {
         E.SetActive(false);
-        doorAnimator = GetComponentInParent<Animator>();
+      //  doorAnimator = GetComponentInParent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -59,8 +59,8 @@ public class Einteract : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger door animation
-                GameManager.instance.keyScore = 0;
                 doorAnimator.SetBool("DoorOpen", true);
+                GameManager.instance.keyScore = 0;
                 Destroy(E);
             }
         }
