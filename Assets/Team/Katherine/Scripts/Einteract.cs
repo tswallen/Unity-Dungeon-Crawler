@@ -59,7 +59,7 @@ public class Einteract : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger door animation
-                GameManager.instance.keyScore--;
+                GameManager.instance.keyScore = 0;
                 doorAnimator.SetBool("DoorOpen", true);
                 Destroy(E);
             }

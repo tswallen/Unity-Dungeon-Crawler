@@ -5,11 +5,16 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public GameObject win;
+
     public int keyScore;
     public int diamondScore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        win.SetActive(false);
+        Time.timeScale = 1.0f;
         if (instance == null)
         {
 
@@ -36,6 +41,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (diamondScore == 10)
+        {
+            win.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
