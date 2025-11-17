@@ -80,6 +80,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7844748993395933484, guid: 1cc25b45a173a15449ab61c33f73b747, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 12334333ced606e4f8d25e1407049fe3, type: 2}
+    - target: {fileID: -4109252002340450056, guid: 1cc25b45a173a15449ab61c33f73b747, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8520e7cf7707c7642a2e24917f575889, type: 2}
     - target: {fileID: 919132149155446097, guid: 1cc25b45a173a15449ab61c33f73b747, type: 3}
       propertyPath: m_Name
       value: M_Moai
