@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject win;
 
-    public int keyScore;
+    public int circle;
+    public int square;
+    public int triangle;
+
     public int diamondScore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,10 +35,23 @@ public class GameManager : MonoBehaviour
         diamondScore = diamondScore + collected;
     }
 
-    public void KeyAddition(int key)
+    public void KeyAddition(int key, GameObject keyType)
     {
-        keyScore = keyScore + key;
+        if (keyType.CompareTag("Square"))
+        {
+            square = square + key;
+        }
+        else if (keyType.CompareTag("Circle"))
+        {
+            circle = circle + key;   
+        }
+        else if (keyType.CompareTag("Triangle"))
+        {
+            triangle = triangle + key;
+        }
     }
+
+
 
 
     // Update is called once per frame

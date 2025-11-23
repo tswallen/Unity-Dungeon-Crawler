@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,34 +12,47 @@ public class Einteract : MonoBehaviour
 
     public string missingKeyText;
 
-    public string youHaveAKey;
+    public string keyTypeText;
 
 
-    bool canOpen = false;
+    public enum KeySelect
+    {
+        Triangle,
+        Square,
+        Circle
+    }
+
+    public KeySelect keySelect;
+
+    public bool canOpen = false;
+
+   public int keyCount;
 
     public Animator doorAnimator;
 
     private void Start()
     {
         E.SetActive(false);
-      //  doorAnimator = GetComponentInParent<Animator>();
+        //  doorAnimator = GetComponentInParent<Animator>();
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("Player") && GameManager.instance.keyScore == 1)
+
+        if (other.gameObject.CompareTag("Player") && keyCount == 1)
         {
             E.SetActive(true);
-            prompt.text = youHaveAKey;
+            prompt.text = "Press E to use " + keySelect + " key";
             canOpen = true;
 
 
-           
+
         }
-        else if (other.gameObject.CompareTag("Player") && GameManager.instance.keyScore != 1)
+        else if (other.gameObject.CompareTag("Player") && keyCount == 0)
         {
             E.SetActive(true);
-            prompt.text = missingKeyText;
+            prompt.text = "This requires a " + keySelect + " key";
 
         }
     }
@@ -48,21 +62,70 @@ public class Einteract : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             E.SetActive(false);
+
+            canOpen = false;
         }
     }
 
 
     private void Update()
     {
+        if (!canOpen)
+        {
+            KeySelection();
+            return;
+        }
+
+
         if (canOpen)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger door animation
                 doorAnimator.SetBool("DoorOpen", true);
-                GameManager.instance.keyScore = 0;
+                keyCount = 0;
+                RemoveKey();
                 Destroy(E);
             }
         }
+    }
+
+    private void RemoveKey()
+    {
+        switch (keySelect)
+        {
+            case KeySelect.Triangle:
+                GameManager.instance.triangle = 0;
+                break;
+            case KeySelect.Circle:
+                GameManager.instance.circle = 0;
+                break;
+            case KeySelect.Square:
+                gameManager.square = 0;
+                break;
+
+
+
+        }
+    }
+
+    public void KeySelection()
+    {
+        switch (keySelect)
+        {
+            case KeySelect.Triangle:
+                keyCount = GameManager.instance.triangle;
+                break;
+            case KeySelect.Circle:
+                keyCount = GameManager.instance.circle;
+                break;
+            case KeySelect.Square:
+                keyCount = GameManager.instance.square;
+                break;
+
+
+
+        }
+
     }
 }
