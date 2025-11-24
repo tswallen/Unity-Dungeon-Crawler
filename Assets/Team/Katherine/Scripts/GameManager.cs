@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public void DiamondAddition(int collected)
     {
         diamondScore = diamondScore + collected;
-        SFXManager.instance.PlaySFXClip(diamondCollection, player.transform, 0.2f);
+        SFXManager.instance.PlaySFXClip(diamondCollection, player.transform, 0.1f);
     }
 
     public void KeyAddition(int key, GameObject keyType)
@@ -46,17 +46,17 @@ public class GameManager : MonoBehaviour
         if (keyType.CompareTag("Square"))
         {
             square = square + key;
-            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.1f);
         }
         else if (keyType.CompareTag("Circle"))
         {
             circle = circle + key;
-            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.1f);
         }
         else if (keyType.CompareTag("Triangle"))
         {
             triangle = triangle + key;
-            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.1f);
         }
     }
 

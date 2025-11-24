@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: f1af5bc9da3fd8b4a94a38c9634304da
+guid: 40aa1b8e446c7c546962c09d32ff6638
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlaneMat
+    second: {fileID: 2100000, guid: d125c4506b9a9f04ba6ba6dcfd5f71ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1

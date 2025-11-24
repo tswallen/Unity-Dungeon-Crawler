@@ -4,10 +4,10 @@ public class Collection : MonoBehaviour
 {
     public bool trueDiamondFalseKey;
 
-    public AudioSource sound;
+   // public AudioSource sound;
     private void Start()
     {
-        sound = GetComponent<AudioSource>();
+        //sound = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -15,13 +15,13 @@ public class Collection : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && trueDiamondFalseKey)
         {
             GameManager.instance.DiamondAddition(1);
-            sound.Play();
+          //  sound.Play();
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Player") && !trueDiamondFalseKey)
         {
             GameManager.instance.KeyAddition(1, gameObject);
-            sound.Play();
+            //sound.Play();
             Destroy(gameObject);  
         }
     }
