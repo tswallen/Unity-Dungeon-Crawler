@@ -30,11 +30,13 @@ public class Einteract : MonoBehaviour
 
     public Animator doorAnimator;
 
+    public AudioSource doorAudio;
+
     private void Start()
     {
         E.SetActive(false);
         //  doorAnimator = GetComponentInParent<Animator>();
-
+        doorAudio = GetComponent<AudioSource>();    
 
     }
     private void OnTriggerEnter(Collider other)
@@ -86,6 +88,7 @@ public class Einteract : MonoBehaviour
                 keyCount = 0;
                 RemoveKey();
                 Destroy(E);
+                doorAudio.Play();
             }
         }
     }

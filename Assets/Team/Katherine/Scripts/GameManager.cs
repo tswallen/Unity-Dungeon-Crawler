@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public int triangle;
 
     public int diamondScore;
+
+    public AudioClip diamondCollection;
+    public AudioClip keyCollection;
+
+    public GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void DiamondAddition(int collected)
     {
         diamondScore = diamondScore + collected;
+        SFXManager.instance.PlaySFXClip(diamondCollection, player.transform, 0.2f);
     }
 
     public void KeyAddition(int key, GameObject keyType)
@@ -40,14 +46,17 @@ public class GameManager : MonoBehaviour
         if (keyType.CompareTag("Square"))
         {
             square = square + key;
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
         }
         else if (keyType.CompareTag("Circle"))
         {
-            circle = circle + key;   
+            circle = circle + key;
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
         }
         else if (keyType.CompareTag("Triangle"))
         {
             triangle = triangle + key;
+            SFXManager.instance.PlaySFXClip(keyCollection, player.transform, 0.2f);
         }
     }
 

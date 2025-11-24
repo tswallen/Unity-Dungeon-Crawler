@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     //the x and y key press
     public Vector2 currentInput;
-   
+
     //the x y z axis of movement
     public Vector3 movement;
     private Rigidbody rb;
@@ -29,9 +30,13 @@ public class PlayerController : MonoBehaviour
 
     public Transform cameraTransform;
 
+    bool isMoving;
+
+    public AudioClip[] randomSteps;
+
+    bool soundGo;
 
 
-    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,19 +58,19 @@ public class PlayerController : MonoBehaviour
         //update our movement vector based on our inputs
         movement = new Vector3(currentInput.x, 0, currentInput.y);
 
-       
-      // apply our speed to our movement direction
-         movement *= speed;
+
+        // apply our speed to our movement direction
+        movement *= speed;
 
         // if we have a camera assigned, we should rotate based on what the camera is doing
-       
-        if (cameraTransform != null) 
+
+        if (cameraTransform != null)
         { //matches left/right rotation to the camera
             transform.localEulerAngles = new Vector3(0, cameraTransform.localEulerAngles.y);
             //translate/change the movement from global forward to local forward
             movement = transform.TransformDirection(movement);
 
-        
+
         }
 
 
@@ -76,16 +81,40 @@ public class PlayerController : MonoBehaviour
         //give this movement to the rigidbody
         rb.linearVelocity = movement;
 
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        float velocityThreshold = 0.5f;
+        isMoving = horizontalVelocity.magnitude > velocityThreshold;
+        if (isMoving)
+        {
+            StartCoroutine(PlaySound());
+        }
+        //else
+        //{
+        //    StopAllCoroutines();
+        //}
 
         //jump button is already set up in unity as space bar
         // to check for a bool and a float you need to wrap the bool 'if' statement around the float if statement, it will then check for one after the other
-        if (isGrounded ())
+        if (isGrounded())
         {
             if (Input.GetButtonDown("Jump"))
             {//&& rb.linearVelocity.y<0.01f - alternative add on to check if player is on the ground, this probably wouldlnt work if there are platforms as the player could still jump if they go off the edge
                 Jump();
             }
         }
+
+    }
+
+    private IEnumerator PlaySound()
+    {
+        while (isMoving && !soundGo)
+        {
+            soundGo = true;
+            SFXManager.instance.PlayRandomSFXClip(randomSteps, transform, 0.1f);
+            yield return new WaitForSeconds(0.5f);
+            soundGo = false;
+        }
+
 
     }
 
@@ -96,8 +125,8 @@ public class PlayerController : MonoBehaviour
         //copy the vector 3 currently tracking our velocity
         // local variable - functions like any other variable but only exists within the allocated function
         // to get a local variable, just say what data type you want and name it
-        
-        
+
+
         Vector3 currentVelocity = rb.linearVelocity;
 
         //change the y value of that vector 3
