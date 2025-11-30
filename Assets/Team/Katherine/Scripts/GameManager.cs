@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             win.SetActive(true);
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

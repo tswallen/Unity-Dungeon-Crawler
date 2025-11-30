@@ -26,17 +26,21 @@ public class Einteract : MonoBehaviour
 
     public bool canOpen = false;
 
-   public int keyCount;
+    public int keyCount;
 
     public Animator doorAnimator;
 
     public AudioSource doorAudio;
 
+
+    bool doorOpened;
+
     private void Start()
     {
         E.SetActive(false);
+        doorOpened = false;
         //  doorAnimator = GetComponentInParent<Animator>();
-        doorAudio = GetComponent<AudioSource>();    
+        doorAudio = GetComponent<AudioSource>();
 
     }
     private void OnTriggerEnter(Collider other)
@@ -83,12 +87,17 @@ public class Einteract : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //trigger door animation
-                doorAnimator.SetBool("DoorOpen", true);
-                keyCount = 0;
-                RemoveKey();
-                Destroy(E);
-                doorAudio.Play();
+                if (!doorOpened)
+                {
+                    //trigger door animation
+                    doorAnimator.SetBool("DoorOpen", true);
+                    keyCount = 0;
+                    RemoveKey();
+                    Destroy(E);
+                    doorAudio.Play();
+                    doorOpened = true;
+                }
+
             }
         }
     }
