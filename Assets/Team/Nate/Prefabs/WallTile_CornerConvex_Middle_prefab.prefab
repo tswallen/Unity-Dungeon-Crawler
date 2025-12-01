@@ -83,7 +83,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ac5fa601418cca54d818a880f5b70be1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 084b49d4d9d777d4492151a4eb19da1e, type: 2}
+      objectReference: {fileID: 2100000, guid: f90f5d14638a0eb46971109b29aefb6c, type: 2}
     - target: {fileID: 919132149155446097, guid: ac5fa601418cca54d818a880f5b70be1, type: 3}
       propertyPath: m_Name
       value: M_WallTile_CornerConvex_Middle
