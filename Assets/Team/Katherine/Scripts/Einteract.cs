@@ -46,7 +46,7 @@ public class Einteract : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Player") && keyCount == 1)
+        if (other.gameObject.CompareTag("Player") && keyCount == 1 && !doorOpened)
         {
             E.SetActive(true);
             prompt.text = "Press E to use " + keySelect + " key";
@@ -55,7 +55,7 @@ public class Einteract : MonoBehaviour
 
 
         }
-        else if (other.gameObject.CompareTag("Player") && keyCount == 0)
+        else if (other.gameObject.CompareTag("Player") && keyCount == 0 && !doorOpened)
         {
             E.SetActive(true);
             prompt.text = "This requires a " + keySelect + " key";
@@ -113,7 +113,7 @@ public class Einteract : MonoBehaviour
                 GameManager.instance.circle = 0;
                 break;
             case KeySelect.Square:
-                gameManager.square = 0;
+                GameManager.instance.square = 0;
                 break;
 
 

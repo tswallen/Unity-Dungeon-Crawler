@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3880649227149762673}
   m_Layer: 0
-  m_Name: PF_Plane
+  m_Name: Plane_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

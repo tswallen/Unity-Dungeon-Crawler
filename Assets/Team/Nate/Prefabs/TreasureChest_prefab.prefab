@@ -180,7 +180,7 @@ MonoBehaviour:
   ChestAnimator: {fileID: 1437493780177764036}
   upMovement: {fileID: 1869999981166367372}
   downMovement: {fileID: 1352157534002493410}
-  movementTime: 3
+  movementTime: 1.7
   diamondPrefab: {fileID: 5826384225275618690, guid: d792d2058784de34999bbaa7fd5948b3, type: 3}
   chestOpenSound: {fileID: 8300000, guid: 75a53df1f5c7cd34b829af91cb3069c4, type: 3}
 --- !u!1 &5550785991912697736

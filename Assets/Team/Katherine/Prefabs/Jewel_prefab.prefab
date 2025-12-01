@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 8474507037734813770}
   - component: {fileID: 4861571410328515304}
   m_Layer: 0
-  m_Name: PF_Jewel
+  m_Name: Jewel_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
