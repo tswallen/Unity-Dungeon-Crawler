@@ -15,13 +15,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.3643216}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.10050251}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.050251253}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.050251257}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.28894457}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.0753767}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -33,53 +33,6 @@ MonoBehaviour:
     m_Value: 0.55
   highlightsEnd:
     m_OverrideState: 0
-    m_Value: 1
---- !u!114 &-8369441577542352798
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-  m_Name: Vignette
-  m_EditorClassIdentifier: 
-  active: 0
-  color:
-    m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  center:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.5}
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.119
-  smoothness:
-    m_OverrideState: 1
-    m_Value: 0.759
-  rounded:
-    m_OverrideState: 0
-    m_Value: 0
---- !u!114 &-4363462075992275728
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
-  m_Name: PaniniProjection
-  m_EditorClassIdentifier: 
-  active: 0
-  distance:
-    m_OverrideState: 1
-    m_Value: 1
-  cropToFit:
-    m_OverrideState: 1
     m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -96,9 +49,6 @@ MonoBehaviour:
   components:
   - {fileID: 1112502052777182886}
   - {fileID: 8302273444112090672}
-  - {fileID: -4363462075992275728}
-  - {fileID: -8369441577542352798}
-  - {fileID: 8424699776191977010}
   - {fileID: 4364839758410116171}
   - {fileID: -9217675492664912227}
 --- !u!114 &1112502052777182886
@@ -177,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   postExposure:
-    m_OverrideState: 1
-    m_Value: 1.8
+    m_OverrideState: 0
+    m_Value: 1.6
   contrast:
     m_OverrideState: 1
     m_Value: 12
@@ -191,25 +141,3 @@ MonoBehaviour:
   saturation:
     m_OverrideState: 0
     m_Value: 100
---- !u!114 &8424699776191977010
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
-  m_Name: SplitToning
-  m_EditorClassIdentifier: 
-  active: 0
-  shadows:
-    m_OverrideState: 1
-    m_Value: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
-  highlights:
-    m_OverrideState: 1
-    m_Value: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
-  balance:
-    m_OverrideState: 0
-    m_Value: 24.6
