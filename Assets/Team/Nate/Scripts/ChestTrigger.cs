@@ -34,11 +34,13 @@ public class ChestTrigger : MonoBehaviour
     {
         if ((newDiamond != null) && stage == 1)
         {
+            newDiamond.GetComponent<Collection>().canBeCollected = false;
             newDiamond.transform.position = Vector3.MoveTowards(newDiamond.transform.position, upMovement.position, 0.1f);
         }
 
         if ((newDiamond != null) && stage == 2)
         {
+            newDiamond.GetComponent<Collection>().canBeCollected = true;
             newDiamond.transform.position = Vector3.MoveTowards(newDiamond.transform.position, downMovement.position, 0.1f);
         }
     }
